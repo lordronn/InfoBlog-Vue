@@ -1,0 +1,49 @@
+h1 {
+    margin-bottom: 55px;
+    text-decoration: underline;
+    
+}
+
+
+.author_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 0px 5px 0.5px;
+    margin: 3% auto;
+    max-width: 600px;
+    color: black;
+
+    & .author {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+      margin-left: 20px;
+      color: black;
+      text-decoration: none;
+      
+      .author_text{
+        margin: 2% 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        
+        p {
+          margin: 0;
+          line-height: 40px;
+        }
+
+        .author_info {
+          color: #64acef;
+          font-size: 24px;
+          margin-left: 20px;
+          width: 250px;
+          }
+      }
+
+      
+    }
+  
+  }
+
+  
