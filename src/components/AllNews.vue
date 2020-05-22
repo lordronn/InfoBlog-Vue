@@ -101,6 +101,7 @@ export default {
     text-align: right;
     font-weight: bold;
     color:#64acef;
+    text-decoration: none;
   }
 }
 
@@ -109,7 +110,6 @@ export default {
   .title_news{
     font-size: 25px;
     font-weight: 650;
-    text-decoration: underline;
   }
   .news_body{ 
     font-size: 20px;
@@ -119,6 +119,13 @@ export default {
   }
 }
 
+.title_news:hover{
+  text-decoration: underline;
+}
+.author:hover{
+  text-decoration: underline;
+}
 </style>
+
 
 

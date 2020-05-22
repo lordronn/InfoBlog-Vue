@@ -11,8 +11,7 @@ export default {
             const receivedNews = await resp.json()
             context.commit('updateNews', receivedNews)
         },
-        clickNews ({commit}, id) {
-            
+        clickNews ({commit}, id) { 
             {commit('visitedPages', id)}
             
           }
@@ -24,7 +23,10 @@ export default {
             
         },
         visitedPages: (state, id) => {
-            state.visitedNews.push(id);
+            if (state.visitedNews.includes(id)){
+                console.log('Article was visited')
+            }
+            else state.visitedNews.push(id);
         }
     },
     getters: {
