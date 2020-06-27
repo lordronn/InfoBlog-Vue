@@ -21,7 +21,9 @@
   color: #2c3e50;
 }
 
-a {color: black;}
+a {
+  color: black;
+}
 
 
 

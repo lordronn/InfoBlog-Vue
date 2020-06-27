@@ -2,31 +2,35 @@
   <div>
     <h1>NEWS</h1>
      <div 
-          class="news_list" 
-          v-for="news in allNews" 
-          :key="news.id"
+        class="news_list" 
+        v-for="news in allNews" 
+        :key="news.id"
      >
       <router-link 
-          :to="{ name: 'ArticleId', 
-          params: {id: news.id}}"
-          class="link_menu"
-         :class="{ shadow: invizNews(news.id) }"
-        >
-          <p class="title_news" @click="clickNews(news.id)">
-            {{ news.title }}
-          </p> 
-          <p class="news_body" maxlength="255" @click="clickNews(news.id)">
-            {{ news.body }}
-          </p>
-        </router-link>
-        <router-link 
-          :to="{ name: 'AuthorId', 
-          params: {id: news.userId}}" 
-          class="author"
-        > 
-          <p>Name author: {{oneAuthor(news.userId).name}}</p>
-        </router-link>
-     </div>
+        :to="{ 
+          name: 'ArticleId', 
+          params: {id: news.id}
+        }"
+        class="link_menu"
+        :class="{ 
+          shadow: usedNews(news.id) 
+        }"
+      >
+        <p class="title_news" @click="clickNews(news.id)">
+          {{ news.title }}
+        </p> 
+        <p class="news_body" maxlength="255" @click="clickNews(news.id)">
+          {{ news.body }}
+        </p>
+      </router-link>
+      <router-link 
+        :to="{ name: 'AuthorId', 
+        params: {id: news.userId}}" 
+        class="author"
+      > 
+        <p>Name author: {{oneAuthor(news.userId).name}}</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -35,18 +39,8 @@ import { mapGetters, mapActions} from 'vuex'
 
 export default {
   name: "AllNews",
-  data() {
-    return {
-      active: true
-    }
-  },
-  computed: mapGetters(["allNews", "oneAuthor", "invizNews"]), 
-   
-  
-  methods: {
-    ...mapActions(["fetchAuthors", "fetchNews", "clickNews"]), 
-
-  },
+  computed: mapGetters(["allNews", "oneAuthor", "usedNews"]), 
+  methods: mapActions(["fetchAuthors", "fetchNews", "clickNews"]), 
   async mounted() {
       this.fetchAuthors();
       this.fetchNews();
@@ -59,7 +53,6 @@ export default {
 .shadow {
   opacity: 0.5;
 }
-
 
 .news_list {
   margin: 3% auto;

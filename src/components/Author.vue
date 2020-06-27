@@ -1,24 +1,24 @@
 <template>
-    <div>
-      <h1>Author № {{this.$route.params.id}}</h1>
-       <div class="author_box"> 
-          <div class="author">
-            <div class="author_text">
-              <p>Author name: </p>
-              <p class="author_info">
-                 {{ oneAuthor.name }} 
-              </p>
-            </div>
-            <div class="author_text"> 
-              <p>Username: </p>
-              <p class="author_info">
-                {{ oneAuthor.username }}
-              </p>
-            </div>
+  <div>
+    <h1>Author № {{this.$route.params.id}}</h1>
+      <div class="author_box"> 
+        <div class="author">
+          <div class="author_text">
+            <p>Author name: </p>
+            <p class="author_info">
+                {{ oneAuthor.name }} 
+            </p>
           </div>
-          <AuthorNews :userId="oneAuthor.id"/> 
-      </div> 
-    </div>
+          <div class="author_text"> 
+            <p>Username: </p>
+            <p class="author_info">
+              {{ oneAuthor.username }}
+            </p>
+          </div>
+        </div>
+        <AuthorNews :userId="oneAuthor.id"/> 
+    </div> 
+  </div>
 </template>
 
 <script>
